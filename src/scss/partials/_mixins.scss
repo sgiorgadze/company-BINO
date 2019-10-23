@@ -1,0 +1,100 @@
+@import 'params';
+@import 'reset';
+
+@mixin clear {
+    padding: 0;
+    margin: 0;
+}
+@mixin clear-list {
+  @include clear();
+  list-style: none;
+
+}
+@mixin min-max($min-width, $max-width, $padding) {
+  min-width: $min-width;
+  max-width: $max-width;
+  padding: 0 $padding;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+
+@mixin flex($dir:row) {
+    display: flex;
+    flex-direction: $dir;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin btn($bg:$red, $two-button:false) {
+  width: 225px;
+  border-radius: 3px;
+  background-color: $bg;
+  border: 2px solid $bg;
+  box-shadow: 0 2px 5px rgba(0,0,0,.25);
+  font-size: 14px;
+font-weight: 700; 
+line-height: 16px;
+padding: 18px 0;
+letter-spacing: 0.14px;
+text-align: center;
+text-transform: uppercase;
+color: $white;
+box-sizing: border-box;
+display: inline-block;
+transition: all 0.3s;
+@content;
+&:hover{
+  background-color: darken($red, 10%);
+  border-color: darken($red, 10%);
+ 
+}
+@if $two-button==true{
+  &:first-child{
+    margin-right: 25px;
+  }
+  &:last-child{
+    background-color:transparent;
+    border-color: $white;
+    &:hover{
+      border-color: $red;
+    }
+  }
+}
+}
+
+@mixin divider($color-line:$white-gray) {
+  width: 7px;
+  position: relative;
+  margin: 20px auto;
+  display: block;
+  p{
+    text-align: center;
+
+    &::after{
+content: "";
+      width: 7px;
+      height: 7px;
+      background-color: $red;
+      border-radius: 50%;
+      display: block;
+    }
+  }
+  &::after, &::before{
+    content: "";
+    width: 80px;
+    height: 1px;
+    background-color: $color-line;
+    display: block;
+    position: absolute;
+   top: 50%;
+    transform: translateY(-1px);
+  }
+  &::before{
+left: -90px;
+  }
+  &::after{
+    right:  -90px;
+      }
+  
+}

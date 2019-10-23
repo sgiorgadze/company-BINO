@@ -1,0 +1,33 @@
+@import "partials/mixins";
+@import "partials/params";
+@import "partials/reset";
+@import "partials/fonts.scss";
+.section-wrap{
+  position: relative;
+
+
+  .section-wrap__icon{  
+    & a{
+     width: 64px;
+     height: 64px;
+     position: absolute;
+    //  border: 5px solid rgba(255,255,255,0.25) ;
+     box-shadow: 0px 0px 0px 8px rgba(255,255,255,0.25) ;
+     left: 50%;
+     bottom: -3%;
+     z-index: 2;
+     transform: translate(-50%,0);
+     background-color: $white-gray;
+     border-radius: 50%;
+    }
+    & .section-wrap_img{
+      width: 30px;
+      height: 30px;
+      position: absolute;
+      left: 28%;
+      top: 30%;
+    }
+  
+  }
+}
+

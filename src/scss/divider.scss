@@ -1,0 +1,8 @@
+@import "partials/mixins";
+@import "partials/params";
+@import "partials/reset";
+@import "partials/fonts.scss";
+
+.divider{
+@include  divider();
+}
