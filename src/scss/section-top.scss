@@ -28,13 +28,33 @@
     padding: 40px 0;
     z-index: 2;
     position: relative;
+    @media (max-width:768px) {
+      flex-wrap: wrap;
+    }
+    & .section-top__logo {
+      @media (max-width:768px) {
+     flex-basis: 100%;
+     text-align: center;
+     margin-bottom: 30px;
+      }
+    }
     & .section-top__menu {
       flex-basis: 60%;
+      @media (max-width:768px) {
+  flex-basis: 100%;
+  padding: 0 10px;
+      }
       ul{
         @include flex();
         flex-wrap: wrap;
+        @media (max-width:560px) {
+    justify-content: center;
+        }
         li{
           margin: 0 5px;
+          @media (max-width:768px) {
+         margin: 5px;
+           }
        a{
         color: $white-gray;
         font-size: 14px;
@@ -43,9 +63,16 @@
         padding-bottom: 17px;
         border-bottom: 1px solid transparent;
         transition: all 0.3s;
+        @media (max-width:768px) {
+         padding-bottom: 0;
+         border-bottom:none;
+         }
         &:hover{
           border-bottom-color: $red;
           color: $red;
+          @media (max-width:768px) {
+            border-bottom:none;
+           }
         }
        }
         }
@@ -60,12 +87,16 @@
     text-align: center;
     position: relative;
     z-index: 2;
+    @media (max-width:980px) {
+      padding-top: 50px;
+    }
     h1{
       font-size: 24px;
       letter-spacing: 1.2px;
       color: $white-gray;
       font-family: 'Source Sans Pro';
       text-transform: capitalize;
+      
       span{
         font-size: 72px;
         font-weight: 700;
@@ -73,7 +104,10 @@
         letter-spacing: 7.2px;
         margin: 30px 0 20px;
         display: block;
-        font-family: 'Open Sans'
+        font-family: 'Open Sans';
+        @media (max-width:980px) {
+         font-size: 50px;
+        }
 
       }
     }
@@ -83,10 +117,22 @@
       margin: 20px auto;
       font-size: 14px;
       line-height: 24px;
+      @media (max-width:768px) {
+      max-width: 100%;
+       }
+      
+
     }
     & .buttons{
       a{
         @include btn($bg:$red, $two-button:true);
+        @media (max-width:560px) {
+     margin: 10px auto;
+     display: block;
+     &:first-child{
+       margin: 15px auto;
+     }
+        }
       }
     }
   }

@@ -1,0 +1,114 @@
+@import "partials/mixins";
+@import "partials/params";
+@import "partials/reset";
+@import "partials/fonts.scss";
+
+.advantages{
+  border-bottom: 1px solid $advantiges-line;
+  padding-bottom: 60px;
+
+
+  &__block{
+display: flex;
+justify-content: space-between;
+flex-wrap: wrap;
+  }
+  & .advantages__element{
+    flex-basis: 23.5%;
+    margin: 80px 0 20px;
+    text-align: center;
+    cursor: pointer;
+    @media (max-width: 768px){
+      flex-basis: 49%;
+      margin:20px 0 20px;
+    }
+    @media (max-width: 482px){
+      flex-basis: 100%;
+      &:first-child{
+        margin-top: 50px;
+      }
+     
+    }
+    & .advantages__icon{
+      width: 73px;
+      height: 73px;
+      border: 1px solid $advantiges-line;
+      margin: 20px auto;
+      position: relative;
+      transition-duration: 500ms;
+      transition-property:border-color,transform;
+   
+      & img{
+        position:absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        transition-duration: 500ms;
+        transition-property:transform;
+           }
+     & .advantages__img1{
+  width: 32px;
+  height: 12px;
+     }
+     & .advantages__img2{
+       width: 27px;
+       height: 23px;
+    }
+    & .advantages__img3{
+      width: 30px;
+      height: 35px;
+    }
+    & .advantages__img4{
+      width: 25px;
+      height: 25px;
+    }
+  
+    }
+    p{
+      font-family: 'Source Sans Pro', sans-serif;
+  color: $advantiges-gray;
+  font-size: 12px;
+  line-height: 20px;
+  letter-spacing: 0.9px;
+  margin: 15px 0;
+    }
+    & .advantages__title{
+      text-transform: uppercase;
+      color: $gray;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 20px;
+      letter-spacing: 1.35px;
+      transition-duration: 500ms;
+      transition-property:color;
+      &::after{
+        content: "";
+        display: block;
+        width: 41px;
+        height: 1px;
+        background-color: #888888;
+        border-bottom: 1px solid #e1e1e1;
+        margin: 15px auto;
+      }
+
+    }
+    &:hover{
+      .advantages__icon{
+        transform: rotate(45deg);
+        border-color: $red;
+       
+        & img{
+          transform: translate(-50%,-50%) rotate(-45deg);     
+         }
+       
+      }
+      .advantages__title{
+        color: $red;
+       
+      }
+    }
+  }
+  
+}
+

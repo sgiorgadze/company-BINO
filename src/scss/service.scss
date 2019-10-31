@@ -1,0 +1,109 @@
+@import "partials/mixins";
+@import "partials/params";
+@import "partials/reset";
+@import "partials/fonts.scss";
+
+.service{
+  background: #202020;
+  margin-bottom: 140px;
+  padding:100px 0 ;
+  position: relative;
+  @media (max-width:768px) {
+padding:25px;
+      }
+
+  &::after{
+    content: "";
+    display: block;
+    width: 46%;
+    height: 100%;
+    background: url("img/services-bg.jpg") right top no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    top: 0;
+    @media (max-width:768px) {
+  display: none;
+        }
+   
+  }
+  & .service__block{
+    width: 54%;
+    text-align: right;
+    @media (max-width:768px) {
+      width: 100%;
+      text-align: left;
+        }
+    & .service__title{
+      color: $white-gray;
+      font-size: 36px;
+      letter-spacing: 3.6px;
+      text-transform: uppercase;
+      font-weight: 700;     
+      padding-right: 30px;
+      line-height: 36px;
+      border-right: 6px solid $red;
+      margin-right: 80px;
+    margin-bottom: 30px;
+    @media (max-width:768px) {
+      border-left: 6px solid $red;
+      border-right: none;
+      padding-right: 0px;
+      padding-left: 30px;
+      margin-right: 0;
+    }
+    @media (max-width:460px) {
+      font-size: 27px;
+        }
+    }
+    & .service__element{
+      max-width: 665px;
+      margin: 55px 80px 55px auto;
+      position: relative;
+      @media (max-width:768px) {
+        max-width: 100%;
+        margin: 25px 0;
+        padding-right: 80px;
+        box-sizing: border-box;
+          }
+      p{
+        font-size: 14px;
+        line-height: 29px;
+        color: $advantiges-gray;
+        font-family: 'Source Sans Pro';
+        &:first-child{
+          text-transform: uppercase;
+          color: $red;
+          font-family: 'Open Sans';
+          font-weight: 600;
+          font-size: 18px;
+        }
+      }
+      & .service__icon{          
+          width: 64px;
+          height: 64px;
+          position: absolute;
+         //  border: 5px solid rgba(255,255,255,0.25) ;
+          box-shadow: 0px 0px 0px 5px rgba(255,255,255,0.25) ;         
+          background-color: $white-gray;
+          border-radius: 50%;
+          right:-117px;
+          top: 50%;
+          transform: translate(0,-50%);
+          z-index: 1;
+          @media (max-width:768px){
+            right: 0;
+          }
+          
+         }
+         & img{       
+           position: absolute;
+           left: 50%;
+           top: 50%;
+           transform: translate(-50%,-50%);
+         }       
+       }
+      }
+    }
+  
+
