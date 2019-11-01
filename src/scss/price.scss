@@ -1,0 +1,163 @@
+@import "partials/mixins";
+@import "partials/params";
+@import "partials/reset";
+@import "partials/fonts.scss";
+
+.price{  
+    margin: 140px 0px;
+    
+    @media (max-width:980px) {
+    margin: 50px 0;
+    }
+      
+  
+  p{
+  font-size: 14px;
+  line-height: 29px;
+  margin: 20px 0;
+  text-align: center;
+  color: $advantiges-gray;
+  }
+  .price__title{
+    color: $gray;
+    font-size: 36px;
+    letter-spacing: 3.6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'Source Sans Pro';
+  }
+  .price__divider{
+    @include divider($advantiges-gray);
+  }
+  .price__block{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    @media (max-width:768px) {
+      justify-content: center;
+     }
+    .price__element{
+      flex-basis: 32.4%;    
+      margin-top: 20px;
+      background-color: $white-gray;
+      @media (max-width:768px) {
+       flex-basis: 45%;
+       margin: 20px 2.5%;
+      }
+      @media (max-width:480px) {
+        flex-basis: 100%;      
+       }
+    
+ 
+      &:hover{
+        .price__top{
+          background-color: $red;
+        }
+        .price__bottom{
+          .price__number{
+            p{
+              color: $red;
+            }
+          }
+        }
+      }
+      .price__top{
+        background-color: $advantiges-gray;
+        padding-bottom: 90px;
+        transition: all 0.3s;
+        .price__name{
+          font-size: 24px;
+          font-weight: 600;
+          letter-spacing: 1.8px;
+          text-transform: uppercase;
+          color: $white;
+          margin: 0;
+          padding: 40px 0;
+        }
+      }
+      .price__bottom{
+        padding-bottom: 20px;
+
+        & .price__number{
+          width: 153px;
+    height: 153px;    
+    border:10px solid  rgba(244, 245, 249, 0.25); 
+    background-color: $white;
+    border-radius: 50%;
+    margin: -86px auto 0;   
+    position: relative;
+    p{
+      font-size: 39px;
+      font-family: 'Source Sans Pro';
+      font-weight: 700;
+      line-height: 40px;
+      margin: 0;
+      color: $advantiges-gray;
+      position: absolute;
+      top:50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.3s;
+      span{
+        font-size: 13px;
+        line-height: 21px;
+        font-weight: 400;
+        display: block;
+
+      }
+    }
+}
+.price__list{
+  text-align: center;
+  margin: 40px 0;
+  li{
+    font-size: 14px;
+    line-height: 20px;
+    margin: 20px 0;
+    font-weight: 600;
+    color: $advantiges-gray;
+  }
+}
+        }
+        .price__btn{
+          @include btn($advantiges-gray){
+            width: 145px;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.12px;
+            padding: 13px 0;
+            display: block;
+            margin: 30px auto;
+            font-weight: 600;
+          
+          }
+        }
+      }
+      .price__element--red{
+        .price__top{
+          background-color: $red;
+          .price__number{
+            p{
+              color: $red;
+            }
+          }
+        }
+        .price__bottom{
+          .price__number{
+            p{
+              color: $red;
+            }
+          }
+          .price__btn{
+            background-color: $red;
+            border-color: $red;
+
+          }
+        
+
+        }
+      }
+
+    }
+  }
