@@ -1,0 +1,133 @@
+@import "partials/mixins";
+@import "partials/params";
+@import "partials/reset";
+@import "partials/fonts.scss";
+.case-study{
+   padding: 140px 0px;
+    background-color: $white-gray;
+    @media (max-width:980px) {
+      padding: 50px 0;
+    }
+  
+       p{
+        font-size: 14px;
+        line-height: 29px;
+        margin: 20px 0;
+        text-align: center;
+        color: $advantiges-gray;
+        }
+        .case-study__title{
+          color: $gray;
+          font-size: 36px;
+          letter-spacing: 3.6px;
+          font-weight: 700;
+          text-transform: uppercase;
+          font-family: 'Source Sans Pro';
+        }
+        .case-study__divider{
+          @include divider($advantiges-gray);
+        }
+        .case-study__block{
+          display: flex;
+          align-items: center;
+          margin-top: 60px;
+          & .case-study__left{
+            flex-basis: 665px;
+            position: relative;
+            z-index: 1;
+            @media (max-width:980px) {
+          flex-basis: 50%;
+          @media (max-width:768px) {
+            flex-basis: 100%;
+        
+              }
+      
+            }
+           
+          }
+          & .case-study__right{
+            @media (max-width:980px) {
+              flex-basis: 50%;
+                }
+                @media (max-width:768px) {
+                 display: none;
+              
+                    }
+            img{
+              margin-left: -80px;
+              @media (max-width:980px) {
+         margin-left: 0;
+         max-width: 100%;
+                  }
+                 
+            }
+          }
+          & .ideas{
+            background-color: $white;
+            box-shadow: 0 3px 5px rgba(0,0,0,.1);
+            padding: 30px 50px 80px;
+            box-sizing: border-box;
+            @media (max-width:980px) {
+        padding: 26px;          
+                }
+                
+            & .ideas__icon{
+              width: 127px;
+              height: 127px;
+              background-color: $red;
+              margin: 50px auto;
+            position: relative;
+            clip-path: polygon(50% 0, 100% 50%, 50% 100%,0 50%);
+            @media (max-width:768px) {
+          margin: 20px auto;           
+                 }
+            img{
+              position: absolute;
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+            }
+            & .ideas__title{
+              font-size: 18px;
+              font-weight: 600;
+              color: $gray;
+              letter-spacing: 1.35px;
+              text-transform: uppercase;
+              &::after{
+                content: "";
+                display: block;
+                width: 41px;
+                height: 2px;
+                background-color:$gray;
+                margin: 25px auto;            
+                border-bottom: 1px solid #e1e1e1;
+              }
+              
+            }
+            p{
+              font-size: 14px;
+              line-height: 24px;
+              color: $advantiges-gray;
+              font-family: 'Source Sans Pro';            
+              letter-spacing: 1.05px;
+
+            }
+            .ideas__btn{
+              @include btn(){
+                width: 145px;
+                font-style: 12px;
+                line-height: 16px;
+                letter-spacing: 0.12px;
+                padding: 13px 0;
+                display: block;
+                margin: 30px auto;
+                font-weight: 600;
+
+              }
+            }
+          
+          }
+        }
+   
+}

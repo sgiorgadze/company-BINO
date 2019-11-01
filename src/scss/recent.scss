@@ -1,0 +1,129 @@
+@import "partials/mixins";
+@import "partials/params";
+@import "partials/reset";
+@import "partials/fonts.scss";
+.recent{
+  margin-top: 140px;
+> p{
+font-size: 14px;
+line-height: 29px;
+margin: 20px 0;
+text-align: center;
+color: $advantiges-gray;
+}
+.recent__title{
+  color: $gray;
+  font-size: 36px;
+  letter-spacing: 3.6px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: 'Source Sans Pro';
+}
+.recent__divider{
+  @include divider($advantiges-gray);
+}
+.recent__links{
+  margin: 50px 0;
+  text-align: center;
+  color: $advantiges-gray;
+  a{
+    font-size: 14px;
+    color: $advantiges-gray;
+    margin: 5px 20px;
+    transition: all 0.3s;
+    font-weight: 600;
+    &:hover{
+      color: $red;      
+    }
+  }
+
+}
+.recent__block{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 40px auto 0px;
+  & .recent__element{
+    flex-basis: 25%;
+    position: relative;
+    @media (max-width:768px){
+      flex-basis: 50%;
+    }
+    @media (max-width:480px){
+      flex-basis: 100%;
+    }
+    & img{
+      max-width: 100%;
+      display: block;
+    }
+    a{
+       &::after{
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: rgba(231,76,60,.8);
+        width: 100%;
+        height: 100%;      
+        opacity: 0;
+        transition-duration: 500ms;
+        transition-property: opacity;        
+      }  
+      &:hover{
+        &::after,p{
+          opacity: 1;
+        }
+      } 
+
+      }
+      p{
+        position: absolute;
+        left: 10%;
+        bottom: 35px;
+        z-index: 1;
+        color: $white;
+        opacity: 0;
+        transition-duration: 500ms;
+        transition-property: opacity;
+        &::before{
+          content: "";
+          width: 44px;
+          height: 4px;
+          background-color: $white;
+          margin-bottom: 25px;
+          display: block;
+        }
+        span{
+          margin: 15px 0;
+          font-size: 14px;
+          letter-spacing: 0.7px;
+          display: block;
+          &:first-child{
+            font-size: 24px;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            font-family: 'Source Sans Pro';
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:980px){
+  .recent{
+    margin-top: 50px;
+    .recent__element{
+      p{
+        bottom: 10px;
+        span{
+          &:first-child{
+            font-size: 18px;
+          }
+        }
+      }
+    }
+
+  }
+
+}
