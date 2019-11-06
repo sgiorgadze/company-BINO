@@ -6,6 +6,10 @@
   background-color: $white-gray;
   padding: 140px 0;
   border-top: 1px solid #d8d9db;
+  @media (max-width:980px) {
+padding: 50px 0;
+    }
+      
 
   p {
     font-size: 14px;
@@ -39,6 +43,60 @@
     flex-basis: 50%;
     display: flex;
     flex-wrap: wrap;
+   
+    @media (max-width:980px) {
+  flex-basis: 100%;
+  &:nth-child(odd){
+    .blog__img{
+      order: 2;
+    }
+    .blog__text{
+      order: 1;
+      &::before{
+        right: -55px;
+        left: auto;
+        border: 30px solid transparent;
+        border-left:25px solid $red ;
+      }
+    }
+    
+}
+&:nth-child(even){
+  .blog__img{
+    order: 1;
+  }
+  .blog__text{
+    order: 2;
+    &::before{
+      left: -55px;
+      right: auto;
+      border: 30px solid transparent;
+      border-right:25px solid $red ;
+    }
+  }
+
+}
+      }
+      @media (max-width:580px) {
+        &:nth-child(odd), &:nth-child(even){
+          .blog__img{
+            flex-basis: 100%;
+            order: 1;
+         
+          }
+          .blog__text{
+            flex-basis: 100%;
+            order: 2;
+            &::before{
+              display: none;
+            }
+          }
+
+        
+        }
+      }
+     
+        
   }
 
   .blog__element--reverce {
@@ -70,6 +128,12 @@
       max-width: 100%;
       height: 100%;
       object-fit: cover;
+      @media (max-width:980px) {
+    width: 100%;
+  
+        
+        }
+          
     }
 
   }
